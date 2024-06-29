@@ -1,0 +1,110 @@
+// Define plugins used in the project
+plugins {
+    id 'com.android.application'  // Enables building an Android application
+    id 'com.google.gms.google-services' // Enables using Google Mobile Services (GMS)
+}
+
+android {
+    // Define the application namespace
+    namespace 'com.s22010008.travelmania'
+    compileSdk 34
+
+    // Set the compile SDK version (API level) that the app targets
+    defaultConfig {
+        // Application identifier (package name)
+        applicationId "com.s22010008.travelmania"
+
+        // Minimum supported Android SDK version
+        minSdk 23
+
+        // Target Android SDK version
+        targetSdk 33
+
+        // Version code (internal version)
+        versionCode 1
+
+        // Version name (user-visible version)
+        versionName "1.0"
+
+        // Test instrumentation runner for unit tests
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            // Disables code shrinking and optimization during release build
+            minifyEnabled false
+
+            // Proguard configuration files for release build (optional)
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    // Set Java source and target compatibility for compilation
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+// Define application dependencies
+dependencies {
+
+    // UI libraries
+    implementation("org.jsoup:jsoup:1.16.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'com.google.android.gms:play-services-tasks:18.2.0'
+
+    // Firebase Authentication
+    implementation 'com.google.firebase:firebase-auth:23.0.0'
+
+    // JSON parsing
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Networking library
+    implementation "com.android.volley:volley:1.2.1"
+
+    // Image loading libraries
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    implementation 'androidx.media3:media3-common:1.3.1'
+    implementation 'com.google.firebase:firebase-storage:21.0.0'
+    implementation 'androidx.tracing:tracing-perfetto-handshake:1.0.0'
+    implementation 'com.google.ar.sceneform:filament-android:1.17.1'
+    implementation 'com.google.android.gms:play-services-home:16.0.0'
+    implementation 'com.google.android.gms:play-services-gcm:17.0.0'
+    implementation 'com.google.android.gms:play-services-awareness:19.1.0'
+    implementation 'androidx.test:core:1.5.0'
+    implementation 'androidx.test.espresso:espresso-contrib:3.5.1'
+    implementation 'androidx.test:rules:1.5.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    // Firebase Realtime Database
+    implementation 'com.google.firebase:firebase-database:21.0.0'
+    implementation 'com.firebaseui:firebase-ui-database:8.0.0'
+
+    // Location services
+    implementation 'com.google.android.gms:play-services-location:21.3.0'
+
+    implementation("com.squareup.okhttp3:okhttp:4.11.0") // Or latest version
+    implementation("org.jsoup:jsoup:1.16.1") // Or latest version
+
+    // Annotations for AndroidX libraries
+    implementation 'androidx.annotation:annotation:1.8.0'
+
+    // Google Places API
+    implementation 'com.google.android.libraries.places:places:3.5.0'
+
+    // Test dependencies
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // For instrumented tests
+    androidTestImplementation 'org.mockito:mockito-android:4.8.0' // Or a suitable version
+
+}
